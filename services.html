@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haiqa Boutique - Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Royal Navbar */
+        header {
+            background-color: rgb(178, 14, 129);
+            color: #fff;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            margin-left: 30px;
+            font-family: 'Georgia', serif;
+            font-size: 2.5em;
+            color: #fff5e1;
+        }
+
+        /* Default Navigation Styles */
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff5e1;
+            text-decoration: none;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+
+        /* Hamburger Menu Styles */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            background-color: white;
+            height: 3px;
+            width: 25px;
+            margin: 5px 0;
+            transition: all 0.3s;
+        }
+
+        /* Mobile Navigation Drawer */
+        nav.mobile {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 70px;
+            right: 0;
+            background-color: rgb(178, 14, 129);
+            width: 200px;
+            padding: 10px 0;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        nav.mobile ul {
+            display: block;
+            text-align: center;
+        }
+
+        nav.mobile ul li {
+            margin: 10px 0;
+        }
+
+        /* Media Query for Mobile View */
+        @media (max-width: 766px) {
+            .hamburger {
+                display: flex;
+            }
+
+            nav.desktop {
+                display: none;
+            }
+
+            nav.mobile.active {
+                display: flex;
+            }
+        }
+
+        /* Media Query for Desktop View */
+        @media (min-width: 767px) {
+            .hamburger {
+                display: none;
+            }
+
+            nav.desktop {
+                display: flex;
+            }
+
+            nav.mobile {
+                display: none;
+            }
+        }
+
+        /* Services Section */
+        #services {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        #services h2 {
+            font-size: 3em;
+            font-family: 'Georgia', serif;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .service-box {
+            margin-bottom: 30px;
+        }
+
+        .service-box h3 {
+            font-size: 2em;
+            color: rgb(178, 14, 129);
+            margin-bottom: 10px;
+        }
+
+        .service-box p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgb(178, 14, 129);
+            color: #fff5e1;
+            text-align: center;
+            padding: 20px 0;
+            font-family: 'Georgia', serif;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .social-media {
+            flex: 1;
+        }
+
+        .social-media h3 {
+            margin-bottom: 10px;
+        }
+
+        .social-media a {
+            margin: 0 10px;
+        }
+
+        .social-media img {
+            width: 30px;
+            height: 30px;
+            transition: transform 0.3s;
+        }
+
+        .social-media img:hover {
+            transform: scale(1.1);
+        }
+
+        .location {
+            flex: 1;
+        }
+
+        .location h3 {
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header with Navbar -->
+    <header>
+        <div class="logo">
+            <h1>Haiqa Boutique</h1>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <!-- Desktop Navigation -->
+        <nav class="desktop">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about1.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="collection.html">Collection</a></li>
+                <li><a href="contact1.html">Contact</a></li>
+            </ul>
+        </nav>
+        <!-- Mobile Navigation -->
+        <nav class="mobile" id="mobile-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about1.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="collection.html">Collection</a></li>
+                <li><a href="contact1.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobile-nav');
+
+        // Toggle mobile nav visibility on hamburger click
+        hamburger.addEventListener('click', () => {
+            mobileNav.classList.toggle('active');
+        });
+    </script>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="service-box">
+            <h3>Custom Tailoring</h3>
+            <p>Our expert tailors create custom-fitted outfits tailored to your unique style and measurements.</p>
+        </div>
+        <div class="service-box">
+            <h3>Exclusive Designs</h3>
+            <p>We offer exclusive designs for special occasions such as weddings, parties, and formal events.</p>
+        </div>
+        <div class="service-box">
+            <h3>Worldwide Shipping</h3>
+            <p>No matter where you are, we bring Haiqa Boutique's collection to your doorstep with worldwide shipping.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-media">
+                <h3>Follow Us</h3>
+                <a href="https://www.facebook.com/haiqaboutique.pk?mibextid=ZbWKwL" target="_blank">
+                    <img src="fbn 1.jpeg" alt="Facebook" />
+                </a>
+                <a href="https://www.instagram.com/haiqaboutique.pk?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+                    <img src="insta 3.jpeg" alt="Instagram" />
+                </a>
+                <a href="https://www.tiktok.com/@haiqaboutique?_t=8qlYQtOSlXR&_r=1" target="_blank">
+                    <img src="tiktok.jpeg" alt="TikTok" />
+                </a>
+                <a href="https://youtu.be/Wi7OfDXEBhY?feature=shared" target="_blank">
+                    <img src="utube 2.jpeg" alt="YouTube" />
+                </a>
+            </div>
+            <div class="location">
+                <h3>Our Location</h3>
+                <p>Haiqa Boutique</p>
+                <p>Kalma Chowk Gulberg 3</p>
+                <p>Firdous Market Basement</p>
+                <p>Shop no 2</p>
+                <p>#03001606333</p>
+                <p>Lahore, Pakistan</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Haiqa Boutique. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
